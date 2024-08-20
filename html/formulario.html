@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO 1</title>
+</head>
+<body>
+    <h4>Botón de incrementar</h4><br>
+
+    <form action="">
+        <input type="button" value="incrementar" onclick="incrementar()">
+        
+    </form>
+
+    <h4>Acceso de usuarios</h4>
+    <form action="">
+        Ingrese usuario: <br>
+        <input type="text" id="usuario">
+        <br><br>
+        Ingrese clave: <br>
+        <input type="password" id="clave">
+        <br><br>
+        <input type="button" value="Confirmar" onclick="verificar()">
+    </form>
+
+    <script>
+        let contador = 0;
+
+        function incrementar () {
+            contador++;
+            alert('VALOR: '+ contador);
+        }
+
+        let control = 0;
+        let contrasenia = 'acceso01'
+
+        function verificar() {
+            let clave = document.getElementById('clave').value;
+             
+            if (clave != contrasenia || clave == "" ){
+                alert('CLAVE INCORRECTA INTENTE DE NUEVO');
+                control++;
+
+                if (control >= 3 ){
+                    alert('INTENTOS AGOTADO, ACCESO BLOQUEADO CONTACTAR A SOPORTE TECNICO');
+                }
+            }else{
+                window.open("https://www.google.com")
+            }
+        }
+    </script>
+    
+</body>
+</html>

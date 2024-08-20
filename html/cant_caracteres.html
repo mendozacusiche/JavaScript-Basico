@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+    <p><textarea name="" id="texto" rows="10" cols="34" maxlength="140"></textarea></p>
+    <p> Carácteres disponible:
+        <span id="cantidad">20</span>
+
+    </p>
+    <script>
+
+        // Selecciona el elemento con el ID 'text' y agrega un evento que se dispara cuando se suelta una tecla ('keyup').
+        document.getElementById('texto').addEventListener('keyup', caracteres);
+
+        // Función que se ejecuta cada vez que se suelta una tecla.
+        function caracteres() {
+
+            // Obtiene la longitud del valor del campo de texto con el ID 'texto'.
+            let cant = document.getElementById('texto').value.length;
+
+            // Calcula la cantidad de caracteres disponibles restando la cantidad de caracteres ingresados de 20.
+            let disponible = 20 - parseInt(cant);
+
+            // Actualiza el contenido del elemento con el ID 'cantidad' para mostrar los caracteres restantes.
+            document.getElementById('cantidad').innerHTML = disponible;
+
+            // Si no quedan caracteres disponibles, muestra una alerta utilizando 'swal'.
+            if (disponible == 0) {
+                swal('Cantidad de caracteres agotados!');
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
