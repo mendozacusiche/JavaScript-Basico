@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de errores</title>
+</head>
+<body>
+
+    <script>
+        // CALLBACKS
+/*function sumar(numero1, numero2, callBack){
+            setTimeout(function(){
+                if(typeof numero1 != 'number' ||
+                   typeof numero2 != 'number'){
+                    return callBack(new Error('Algun argumento no es número'));
+                   }
+                callBack(null, numero1 + numero2);
+            }, 1000)
+        }
+
+        sumar(30, 50, function(error, resultado){
+            if(error){
+                console.log(error);
+            }else{
+                console.log(resultado);
+            }
+        });
+        // PROMESAS
+          function add(num1, num2){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+
+                    if(typeof num1 != 'number' || 
+                        typeof num2 != 'number'){
+                            reject(new Error('Ambos argumentos deben ser numeros'));
+                        }else{
+                            reject(num1 + num2);
+                        }
+                }, 1000)
+            })
+          }
+
+          add(30,50)
+          .then(function(resultado){
+            console.log(resultado);
+          }).catch(function(errror){
+            console.error(errror);
+          })*/
+
+          // ASYNC - AWAITS
+
+          async function add(n1, n2){
+
+            if(typeof n1 != 'number' || typeof n2 != 'number'){
+                throw new Error('ALGUNO DE LOS ARGUMENTOS NO ES NUMERO');
+            }
+            return n1 + n2;
+          }
+
+          async function manejoErrores() {
+            try{
+                let resultado = await add(10, 24);
+                console.log(resultado);
+            }catch(error){
+                console.error(error.message);
+            }
+          }
+
+          manejoErrores()
+
+    </script>
+    
+</body>
+</html>

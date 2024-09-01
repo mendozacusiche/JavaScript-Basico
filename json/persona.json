@@ -1,0 +1,14 @@
+{
+    "nombre": "Juan Gonzales",
+    "edad": 28,
+    "estudiante": false,
+    "direccion": {
+        "calle":"ave. Primera nro 55",
+        "ciudad": "Santo Domingo"
+    },
+
+    "telefono":[
+        "223-233-897",
+        "987-769-221"
+    ]
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //accion 1 
+        console.log('Incio del  codigo sincrónico');
+
+        //acciones 2
+        /*for(let f=0; f<10; f++){
+            console.log(f);
+        }*/
+
+        setTimeout(function(){
+            for(let f=0; f< 10; f++){
+                console.log(f);
+            };
+        }, 0);
+
+        console.log('Fin del codigo sincrono');
+    </script>
+</body>
+</html>

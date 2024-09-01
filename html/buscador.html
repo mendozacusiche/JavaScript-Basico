@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Pelicula</title>
+    <link rel="stylesheet" href="/css/buscador.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h1>Buscador</h1>
+    <hr>
+    <div class="bloque">
+        <select name="" id="miSelector">
+            <option value="/json/peliculas.json">Pelicula</option>
+            <option value="/json/series.json">Series</option>
+        </select>
+    </div>
+    <div class="bloque">
+        <input type="text" id="miInput" placeholder="Ingrese busqueda...">
+        <button id="miBoton">Buscar</button>
+    </div>
+
+    <div class="bloque">
+        <ul id="miLista"></ul>
+    </div>
+</body>
+    <script src="/js/buscador.js "></script>
+</html>
